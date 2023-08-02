@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const SingleTeam = ({ team, memberPosition }) => {
+  const API_PHOTO_MEMBER = process.env.NEXT_PUBLIC_PHOTO_MEMBER;
   const { _id, photo, name, instagram } = team;
   return (
     <div className={`${team.periodeId.periode_year == "2022-2023" ? 'col-xl-3 col-lg-3 col-md-6' : 'col-xl-4 col-lg-4 col-md-6'}  wow tpfadeUp`}
@@ -14,7 +15,7 @@ const SingleTeam = ({ team, memberPosition }) => {
           <img src="assets/img/team/team-shape-5.2.png" alt="" />
         </div>
         <div className="tpteam__thumb">
-          <img className="w-100" src={`http://localhost:4000/members/${photo}`} alt="" />
+          <img className="w-100" src={`${API_PHOTO_MEMBER}/${photo}`} alt="" />
         </div>
         <div className="tpteam__content">
           <h4 className="tp-team-sm-title">

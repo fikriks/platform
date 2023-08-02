@@ -6,6 +6,7 @@ import { getTags } from '../../services/tags';
 import Moment from 'react-moment';
 
 const BlogSidebar = () => {
+  const API_THUMBNAIL = process.env.NEXT_PUBLIC_THUMBNAIL;
   const [postList, setPostList] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
   const [tagList, setTagList] = useState([]);
@@ -59,7 +60,7 @@ const BlogSidebar = () => {
               <div key={post._id} className="rc__post mb-20 d-flex align-items-center">
                 <div className="rc__post-thumb mr-20">
                   <Link href={`/blog/${post.slug}`}>
-                      <img src={`http://localhost:4000/thumbnails/${post.thumbnail}`} alt="" />
+                      <img src={`${API_THUMBNAIL}/${post.thumbnail}`} alt="" />
                   </Link>
                 </div>
                 <div className="rc__post-content">

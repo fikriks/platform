@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const QuoteArea = () => {
+  const API_PHOTO_MEMBER = process.env.NEXT_PUBLIC_PHOTO_MEMBER;
   const [quoteList, setQuoteList] = useState([]);
   const [sliderLoop, setSliderLoop] = useState(false);
 
@@ -51,7 +52,7 @@ const QuoteArea = () => {
                     <SwiperSlide key={i}>
                       <div className="tp-testimonial-item-two text-center">
                         <div className="tp-testimonial-info">
-                          <img src={`http://localhost:4000/members/${item.memberId.photo}`} alt="" />
+                          <img src={`${API_PHOTO_MEMBER}/${item.memberId.photo}`} alt="" />
                           <h4>{item.memberId.name}</h4>
                           <span>{`${item.memberPositionId.name} - Periode ${item.periodeId.periode_year} `}</span>
                           <p>{item.content}</p>

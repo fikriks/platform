@@ -4,6 +4,7 @@ import { getPosts } from '../../services/posts';
 import Moment from 'react-moment';
 
 const BlogArea = () => {
+  const API_THUMBNAIL = process.env.NEXT_PUBLIC_THUMBNAIL;
   const [postList, setPostList] = useState([]);
 
   const getPostList = useCallback(async () => {
@@ -40,7 +41,7 @@ const BlogArea = () => {
                 <div className="tp-blog-item">
                   <div className="tp-blog-img fix mb-35">
                     <Link href={`/blog-details/${slug}`}>
-                      <img className="w-100" src={`http://localhost:4000/thumbnails/${thumbnail}`} alt={thumbnail} />
+                      <img className="w-100" src={`${API_THUMBNAIL}/${thumbnail}`} alt={thumbnail} />
                     </Link>
                   </div>
                   <div className="tp-blog-meta d-flex justify-content-between mb-30">
